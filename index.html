@@ -2,90 +2,580 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English Level Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Level Test - 60 Questions</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
+      margin: 0; padding: 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    h1 {
+    h1, h2 {
       text-align: center;
       color: #333;
     }
     .question {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .question p {
       font-weight: bold;
     }
     .question label {
       display: block;
-      margin: 5px 0;
+      margin: 4px 0;
+      cursor: pointer;
     }
     button {
       background: #4CAF50;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       display: block;
-      margin: 20px auto;
+      margin: 25px auto;
     }
     .result {
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 30px;
+      color: #222;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>English Level Test</h1>
+    <h1>English Level Test (60 Questions)</h1>
+
     <form id="quizForm">
-      <div class="question"><p>1. We ___ American.</p><label><input type="radio" name="q1" value="C"> aren’t</label><label><input type="radio" name="q1" value="wrong"> not</label><label><input type="radio" name="q1" value="wrong"> not are</label><label><input type="radio" name="q1" value="wrong"> isn’t</label></div>
-      <div class="question"><p>2. Is Mont Blanc ___ mountain in Europe?</p><label><input type="radio" name="q2" value="D"> the highest</label><label><input type="radio" name="q2" value="wrong"> the higher</label><label><input type="radio" name="q2" value="wrong"> the most highest</label><label><input type="radio" name="q2" value="wrong"> the more high</label></div>
-      <div class="question"><p>3. I ___ to classical music.</p><label><input type="radio" name="q3" value="C"> never listen</label><label><input type="radio" name="q3" value="wrong"> never to listen</label><label><input type="radio" name="q3" value="wrong"> listen never</label><label><input type="radio" name="q3" value="wrong"> don’t never listen</label></div>
-      <div class="question"><p>4. Could we ___ the bill, please?</p><label><input type="radio" name="q4" value="C"> have</label><label><input type="radio" name="q4" value="wrong"> take</label><label><input type="radio" name="q4" value="wrong"> want</label><label><input type="radio" name="q4" value="wrong"> ask</label></div>
-      <div class="question"><p>5. It’s my ___ computer.</p><label><input type="radio" name="q5" value="B"> parents’</label><label><input type="radio" name="q5" value="wrong"> parents</label><label><input type="radio" name="q5" value="wrong"> parent</label><label><input type="radio" name="q5" value="wrong"> parent’s</label></div>
-      <div class="question"><p>6. I haven’t ___ this photo before.</p><label><input type="radio" name="q6" value="D"> seen</label><label><input type="radio" name="q6" value="wrong"> see</label><label><input type="radio" name="q6" value="wrong"> saw</label><label><input type="radio" name="q6" value="wrong"> to see</label></div>
-      <div class="question"><p>7. She ___ to the gym every day.</p><label><input type="radio" name="q7" value="B"> goes</label><label><input type="radio" name="q7" value="wrong"> gets</label><label><input type="radio" name="q7" value="wrong"> has</label><label><input type="radio" name="q7" value="wrong"> does</label></div>
-      <div class="question"><p>8. There ___ telephone in my hotel room.</p><label><input type="radio" name="q8" value="A"> wasn’t a</label><label><input type="radio" name="q8" value="wrong"> weren’t a</label><label><input type="radio" name="q8" value="wrong"> weren’t any</label><label><input type="radio" name="q8" value="wrong"> wasn’t some</label></div>
-      <div class="question"><p>9. Would you like ___ coffee?</p><label><input type="radio" name="q9" value="B"> another</label><label><input type="radio" name="q9" value="wrong"> other</label><label><input type="radio" name="q9" value="wrong"> some other</label><label><input type="radio" name="q9" value="wrong"> more one</label></div>
-      <div class="question"><p>10. ___ the time?</p><label><input type="radio" name="q10" value="A"> What’s</label><label><input type="radio" name="q10" value="wrong"> What is it</label><label><input type="radio" name="q10" value="wrong"> What</label><label><input type="radio" name="q10" value="wrong"> What it is</label></div>
-      <button type="button" onclick="submitQuiz()">Submit</button>
-    </form>
-    <div class="result" id="result"></div>
-  </div>
-  <script>
-    function submitQuiz() {
-      const correctAnswers = ['C','D','C','C','B','D','B','A','B','A'];
-      let score = 0;
-      for (let i = 1; i <= 10; i++) {
-        const q = document.querySelector(`input[name=q${i}]:checked`);
-        if (q && q.value === correctAnswers[i-1]) {
-          score++;
-        }
-      }
-      let level = '';
-      if (score <= 4) level = 'Elementary (A1-A2)';
-      else if (score <= 7) level = 'Intermediate (B1-B2)';
-      else level = 'Advanced (C1-C2)';
-      document.getElementById('result').innerText = `You scored ${score}/10. Your English level is: ${level}`;
-    }
-  </script>
-</body>
-</html>
+
+      <h2>Elementary Level (A1-A2) - Questions 1-20</h2>
+
+      <div class="question">
+        <p>1. We ___ American.</p>
+        <label><input type="radio" name="q1" value="C" /> aren’t</label>
+        <label><input type="radio" name="q1" value="wrong" /> not</label>
+        <label><input type="radio" name="q1" value="wrong" /> not are</label>
+        <label><input type="radio" name="q1" value="wrong" /> isn’t</label>
+      </div>
+
+      <div class="question">
+        <p>2. Is Mont Blanc ___ mountain in Europe?</p>
+        <label><input type="radio" name="q2" value="D" /> the highest</label>
+        <label><input type="radio" name="q2" value="wrong" /> the higher</label>
+        <label><input type="radio" name="q2" value="wrong" /> the most highest</label>
+        <label><input type="radio" name="q2" value="wrong" /> the more high</label>
+      </div>
+
+      <div class="question">
+        <p>3. I ___ to classical music.</p>
+        <label><input type="radio" name="q3" value="C" /> never listen</label>
+        <label><input type="radio" name="q3" value="wrong" /> never to listen</label>
+        <label><input type="radio" name="q3" value="wrong" /> listen never</label>
+        <label><input type="radio" name="q3" value="wrong" /> don’t never listen</label>
+      </div>
+
+      <div class="question">
+        <p>4. Could we ___ the bill, please?</p>
+        <label><input type="radio" name="q4" value="C" /> have</label>
+        <label><input type="radio" name="q4" value="wrong" /> take</label>
+        <label><input type="radio" name="q4" value="wrong" /> want</label>
+        <label><input type="radio" name="q4" value="wrong" /> ask</label>
+      </div>
+
+      <div class="question">
+        <p>5. It’s my ___ computer.</p>
+        <label><input type="radio" name="q5" value="B" /> parents’</label>
+        <label><input type="radio" name="q5" value="wrong" /> parents</label>
+        <label><input type="radio" name="q5" value="wrong" /> parent</label>
+        <label><input type="radio" name="q5" value="wrong" /> parent’s</label>
+      </div>
+
+      <div class="question">
+        <p>6. Where ___ you from?</p>
+        <label><input type="radio" name="q6" value="A" /> are</label>
+        <label><input type="radio" name="q6" value="wrong" /> is</label>
+        <label><input type="radio" name="q6" value="wrong" /> am</label>
+        <label><input type="radio" name="q6" value="wrong" /> be</label>
+      </div>
+
+      <div class="question">
+        <p>7. She ___ a new book every week.</p>
+        <label><input type="radio" name="q7" value="B" /> reads</label>
+        <label><input type="radio" name="q7" value="wrong" /> read</label>
+        <label><input type="radio" name="q7" value="wrong" /> reading</label>
+        <label><input type="radio" name="q7" value="wrong" /> is read</label>
+      </div>
+
+      <div class="question">
+        <p>8. They ___ happy yesterday.</p>
+        <label><input type="radio" name="q8" value="A" /> were</label>
+        <label><input type="radio" name="q8" value="wrong" /> was</label>
+        <label><input type="radio" name="q8" value="wrong" /> are</label>
+        <label><input type="radio" name="q8" value="wrong" /> is</label>
+      </div>
+
+      <div class="question">
+        <p>9. I ___ like coffee.</p>
+        <label><input type="radio" name="q9" value="B" /> don’t</label>
+        <label><input type="radio" name="q9" value="wrong" /> doesn’t</label>
+        <label><input type="radio" name="q9" value="wrong" /> not</label>
+        <label><input type="radio" name="q9" value="wrong" /> isn’t</label>
+      </div>
+
+      <div class="question">
+        <p>10. What time ___ it?</p>
+        <label><input type="radio" name="q10" value="A" /> is</label>
+        <label><input type="radio" name="q10" value="wrong" /> are</label>
+        <label><input type="radio" name="q10" value="wrong" /> does</label>
+        <label><input type="radio" name="q10" value="wrong" /> do</label>
+      </div>
+
+      <div class="question">
+        <p>11. There ___ a cat under the table.</p>
+        <label><input type="radio" name="q11" value="C" /> is</label>
+        <label><input type="radio" name="q11" value="wrong" /> are</label>
+        <label><input type="radio" name="q11" value="wrong" /> were</label>
+        <label><input type="radio" name="q11" value="wrong" /> be</label>
+      </div>
+
+      <div class="question">
+        <p>12. He ___ to school by bus.</p>
+        <label><input type="radio" name="q12" value="B" /> goes</label>
+        <label><input type="radio" name="q12" value="wrong" /> go</label>
+        <label><input type="radio" name="q12" value="wrong" /> going</label>
+        <label><input type="radio" name="q12" value="wrong" /> gone</label>
+      </div>
+
+      <div class="question">
+        <p>13. My sister ___ a new dress now.</p>
+        <label><input type="radio" name="q13" value="A" /> is wearing</label>
+        <label><input type="radio" name="q13" value="wrong" /> wears</label>
+        <label><input type="radio" name="q13" value="wrong" /> wear</label>
+        <label><input type="radio" name="q13" value="wrong" /> wore</label>
+      </div>
+
+      <div class="question">
+        <p>14. I have ___ apples in the basket.</p>
+        <label><input type="radio" name="q14" value="D" /> some</label>
+        <label><input type="radio" name="q14" value="wrong" /> any</label>
+        <label><input type="radio" name="q14" value="wrong" /> few</label>
+        <label><input type="radio" name="q14" value="wrong" /> a few</label>
+      </div>
+
+      <div class="question">
+        <p>15. They live ___ New York.</p>
+        <label><input type="radio" name="q15" value="B" /> in</label>
+        <label><input type="radio" name="q15" value="wrong" /> at</label>
+        <label><input type="radio" name="q15" value="wrong" /> on</label>
+        <label><input type="radio" name="q15" value="wrong" /> to</label>
+      </div>
+
+      <div class="question">
+        <p>16. I ___ a book yesterday.</p>
+        <label><input type="radio" name="q16" value="C" /> bought</label>
+        <label><input type="radio" name="q16" value="wrong" /> buy</label>
+        <label><input type="radio" name="q16" value="wrong" /> buying</label>
+        <label><input type="radio" name="q16" value="wrong" /> buys</label>
+      </div>
+
+      <div class="question">
+        <p>17. She can ___ English very well.</p>
+        <label><input type="radio" name="q17" value="A" /> speak</label>
+        <label><input type="radio" name="q17" value="wrong" /> speaks</label>
+        <label><input type="radio" name="q17" value="wrong" /> spoke</label>
+        <label><input type="radio" name="q17" value="wrong" /> speaking</label>
+      </div>
+
+      <div class="question">
+        <p>18. What is your favorite color?</p>
+        <label><input type="radio" name="q18" value="A" /> Blue</label>
+        <label><input type="radio" name="q18" value="wrong" /> Cat</label>
+        <label><input type="radio" name="q18" value="wrong" /> Run</label>
+        <label><input type="radio" name="q18" value="wrong" /> Eat</label>
+      </div>
+
+      <div class="question">
+        <p>19. They are ___ friends.</p>
+        <label><input type="radio" name="q19" value="B" /> good</label>
+        <label><input type="radio" name="q19" value="wrong" /> well</label>
+        <label><input type="radio" name="q19" value="wrong" /> bad</label>
+        <label><input type="radio" name="q19" value="wrong" /> badly</label>
+      </div>
+
+      <div class="question">
+        <p>20. The sun ___ in the east.</p>
+        <label><input type="radio" name="q20" value="C" /> rises</label>
+        <label><input type="radio" name="q20" value="wrong" /> rise</label>
+        <label><input type="radio" name="q20" value="wrong" /> rising</label>
+        <label><input type="radio" name="q20" value="wrong" /> rose</label>
+      </div>
+
+      <h2>Intermediate Level (B1-B2) - Questions 21-40</h2>
+
+      <div class="question">
+        <p>21. I haven’t ___ this photo before.</p>
+        <label><input type="radio" name="q21" value="D" /> seen</label>
+        <label><input type="radio" name="q21" value="wrong" /> see</label>
+        <label><input type="radio" name="q21" value="wrong" /> saw</label>
+        <label><input type="radio" name="q21" value="wrong" /> to see</label>
+      </div>
+
+      <div class="question">
+        <p>22. She ___ to the gym every day.</p>
+        <label><input type="radio" name="q22" value="B" /> goes</label>
+        <label><input type="radio" name="q22" value="wrong" /> gets</label>
+        <label><input type="radio" name="q22" value="wrong" /> has</label>
+        <label><input type="radio" name="q22" value="wrong" /> does</label>
+      </div>
+
+      <div class="question">
+        <p>23. There ___ telephone in my hotel room.</p>
+        <label><input type="radio" name="q23" value="A" /> wasn’t a</label>
+        <label><input type="radio" name="q23" value="wrong" /> weren’t a</label>
+        <label><input type="radio" name="q23" value="wrong" /> weren’t any</label>
+        <label><input type="radio" name="q23" value="wrong" /> wasn’t some</label>
+      </div>
+
+      <div class="question">
+        <p>24. Would you like ___ coffee?</p>
+        <label><input type="radio" name="q24" value="B" /> another</label>
+        <label><input type="radio" name="q24" value="wrong" /> other</label>
+        <label><input type="radio" name="q24" value="wrong" /> some other</label>
+        <label><input type="radio" name="q24" value="wrong" /> more one</label>
+      </div>
+
+      <div class="question">
+        <p>25. ___ the time?</p>
+        <label><input type="radio" name="q25" value="A" /> What’s</label>
+        <label><input type="radio" name="q25" value="wrong" /> What is it</label>
+        <label><input type="radio" name="q25" value="wrong" /> What</label>
+        <label><input type="radio" name="q25" value="wrong" /> What it is</label>
+      </div>
+
+      <div class="question">
+        <p>26. He has been working here ___ five years.</p>
+        <label><input type="radio" name="q26" value="C" /> for</label>
+        <label><input type="radio" name="q26" value="wrong" /> since</label>
+        <label><input type="radio" name="q26" value="wrong" /> from</label>
+        <label><input type="radio" name="q26" value="wrong" /> at</label>
+      </div>
+
+      <div class="question">
+        <p>27. If I were you, I ___ that job.</p>
+        <label><input type="radio" name="q27" value="D" /> would take</label>
+        <label><input type="radio" name="q27" value="wrong" /> will take</label>
+        <label><input type="radio" name="q27" value="wrong" /> took</label>
+        <label><input type="radio" name="q27" value="wrong" /> take</label>
+      </div>
+
+      <div class="question">
+        <p>28. We can’t meet tomorrow. I’m ___.</p>
+        <label><input type="radio" name="q28" value="B" /> busy</label>
+        <label><input type="radio" name="q28" value="wrong" /> boring</label>
+        <label><input type="radio" name="q28" value="wrong" /> busied</label>
+        <label><input type="radio" name="q28" value="wrong" /> bore</label>
+      </div>
+
+      <div class="question">
+        <p>29. She has already ___ the report.</p>
+        <label><input type="radio" name="q29" value="A" /> finished</label>
+        <label><input type="radio" name="q29" value="wrong" /> finish</label>
+        <label><input type="radio" name="q29" value="wrong" /> finishing</label>
+        <label><input type="radio" name="q29" value="wrong" /> finishes</label>
+      </div>
+
+      <div class="question">
+        <p>30. This is the best restaurant I’ve ___ been to.</p>
+        <label><input type="radio" name="q30" value="C" /> ever</label>
+        <label><input type="radio" name="q30" value="wrong" /> never</label>
+        <label><input type="radio" name="q30" value="wrong" /> always</label>
+        <label><input type="radio" name="q30" value="wrong" /> yet</label>
+      </div>
+
+      <div class="question">
+        <p>31. By the time we arrived, the movie ___ started.</p>
+        <label><input type="radio" name="q31" value="B" /> had</label>
+        <label><input type="radio" name="q31" value="wrong" /> has</label>
+        <label><input type="radio" name="q31" value="wrong" /> was</label>
+        <label><input type="radio" name="q31" value="wrong" /> is</label>
+      </div>
+
+      <div class="question">
+        <p>32. We look forward to ___ from you soon.</p>
+        <label><input type="radio" name="q32" value="A" /> hearing</label>
+        <label><input type="radio" name="q32" value="wrong" /> hear</label>
+        <label><input type="radio" name="q32" value="wrong" /> heard</label>
+        <label><input type="radio" name="q32" value="wrong" /> to hear</label>
+      </div>
+
+      <div class="question">
+        <p>33. The company has grown ___ in the past year.</p>
+        <label><input type="radio" name="q33" value="B" /> significantly</label>
+        <label><input type="radio" name="q33" value="wrong" /> significant</label>
+        <label><input type="radio" name="q33" value="wrong" /> significance</label>
+        <label><input type="radio" name="q33" value="wrong" /> significantness</label>
+      </div>
+
+      <div class="question">
+        <p>34. I prefer tea ___ coffee.</p>
+        <label><input type="radio" name="q34" value="C" /> to</label>
+        <label><input type="radio" name="q34" value="wrong" /> than</label>
+        <label><input type="radio" name="q34" value="wrong" /> over</label>
+        <label><input type="radio" name="q34" value="wrong" /> rather</label>
+      </div>
+
+      <div class="question">
+        <p>35. They’ve been married ___ 10 years.</p>
+        <label><input type="radio" name="q35" value="D" /> for</label>
+        <label><input type="radio" name="q35" value="wrong" /> since</label>
+        <label><input type="radio" name="q35" value="wrong" /> during</label>
+        <label><input type="radio" name="q35" value="wrong" /> from</label>
+      </div>
+
+      <div class="question">
+        <p>36. The book ___ on the table.</p>
+        <label><input type="radio" name="q36" value="B" /> is</label>
+        <label><input type="radio" name="q36" value="wrong" /> are</label>
+        <label><input type="radio" name="q36" value="wrong" /> was</label>
+        <label><input type="radio" name="q36" value="wrong" /> were</label>
+      </div>
+
+      <div class="question">
+        <p>37. She suggested ___ earlier.</p>
+        <label><input type="radio" name="q37" value="A" /> leaving</label>
+        <label><input type="radio" name="q37" value="wrong" /> leave</label>
+        <label><input type="radio" name="q37" value="wrong" /> to leave</label>
+        <label><input type="radio" name="q37" value="wrong" /> left</label>
+      </div>
+
+      <div class="question">
+        <p>38. I didn’t ___ the email yesterday.</p>
+        <label><input type="radio" name="q38" value="C" /> receive</label>
+        <label><input type="radio" name="q38" value="wrong" /> received</label>
+        <label><input type="radio" name="q38" value="wrong" /> receiving</label>
+        <label><input type="radio" name="q38" value="wrong" /> to receive</label>
+      </div>
+
+      <div class="question">
+        <p>39. She’s been living in London ___ 2010.</p>
+        <label><input type="radio" name="q39" value="B" /> since</label>
+        <label><input type="radio" name="q39" value="wrong" /> for</label>
+        <label><input type="radio" name="q39" value="wrong" /> during</label>
+        <label><input type="radio" name="q39" value="wrong" /> from</label>
+      </div>
+
+      <div class="question">
+        <p>40. If it ___ tomorrow, we’ll stay home.</p>
+        <label><input type="radio" name="q40" value="D" /> rains</label>
+        <label><input type="radio" name="q40" value="wrong" /> will rain</label>
+        <label><input type="radio" name="q40" value="wrong" /> rain</label>
+        <label><input type="radio" name="q40" value="wrong" /> raining</label>
+      </div>
+
+      <h2>Advanced Level (C1-C2) - Questions 41-60</h2>
+
+      <div class="question">
+        <p>41. Hardly ___ he finished when the phone rang.</p>
+        <label><input type="radio" name="q41" value="A" /> had</label>
+        <label><input type="radio" name="q41" value="wrong" /> has</label>
+        <label><input type="radio" name="q41" value="wrong" /> did</label>
+        <label><input type="radio" name="q41" value="wrong" /> have</label>
+      </div>
+
+      <div class="question">
+        <p>42. No sooner ___ they arrived than it started to rain.</p>
+        <label><input type="radio" name="q42" value="B" /> had</label>
+        <label><input type="radio" name="q42" value="wrong" /> have</label>
+        <label><input type="radio" name="q42" value="wrong" /> did</label>
+        <label><input type="radio" name="q42" value="wrong" /> has</label>
+      </div>
+
+      <div class="question">
+        <p>43. She demands that he ___ on time.</p>
+        <label><input type="radio" name="q43" value="D" /> be</label>
+        <label><input type="radio" name="q43" value="wrong" /> is</label>
+        <label><input type="radio" name="q43" value="wrong" /> was</label>
+        <label><input type="radio" name="q43" value="wrong" /> were</label>
+      </div>
+
+      <div class="question">
+        <p>44. It’s high time you ___ your homework.</p>
+        <label><input type="radio" name="q44" value="C" /> did</label>
+        <label><input type="radio" name="q44" value="wrong" /> do</label>
+        <label><input type="radio" name="q44" value="wrong" /> does</label>
+        <label><input type="radio" name="q44" value="wrong" /> doing</label>
+      </div>
+
+      <div class="question">
+        <p>45. I would rather you ___ here tomorrow.</p>
+        <label><input type="radio" name="q45" value="A" /> came</label>
+        <label><input type="radio" name="q45" value="wrong" /> come</label>
+        <label><input type="radio" name="q45" value="wrong" /> will come</label>
+        <label><input type="radio" name="q45" value="wrong" /> comes</label>
+      </div>
+
+      <div class="question">
+        <p>46. She has a tendency ___ exaggerate things.</p>
+        <label><input type="radio" name="q46" value="B" /> to</label>
+        <label><input type="radio" name="q46" value="wrong" /> for</label>
+        <label><input type="radio" name="q46" value="wrong" /> of</label>
+        <label><input type="radio" name="q46" value="wrong" /> on</label>
+      </div>
+
+      <div class="question">
+        <p>47. Despite ___ very tired, he went to work.</p>
+        <label><input type="radio" name="q47" value="C" /> being</label>
+        <label><input type="radio" name="q47" value="wrong" /> be</label>
+        <label><input type="radio" name="q47" value="wrong" /> to be</label>
+        <label><input type="radio" name="q47" value="wrong" /> been</label>
+      </div>
+
+      <div class="question">
+        <p>48. Neither of them ___ the answer.</p>
+        <label><input type="radio" name="q48" value="D" /> knows</label>
+        <label><input type="radio" name="q48" value="wrong" /> know</label>
+        <label><input type="radio" name="q48" value="wrong" /> knew</label>
+        <label><input type="radio" name="q48" value="wrong" /> known</label>
+      </div>
+
+      <div class="question">
+        <p>49. It was John who ___ the vase.</p>
+        <label><input type="radio" name="q49" value="A" /> broke</label>
+        <label><input type="radio" name="q49" value="wrong" /> break</label>
+        <label><input type="radio" name="q49" value="wrong" /> breaks</label>
+        <label><input type="radio" name="q49" value="wrong" /> broken</label>
+      </div>
+
+      <div class="question">
+        <p>50. I can’t stand ___ in queues.</p>
+        <label><input type="radio" name="q50" value="B" /> waiting</label>
+        <label><input type="radio" name="q50" value="wrong" /> wait</label>
+        <label><input type="radio" name="q50" value="wrong" /> to wait</label>
+        <label><input type="radio" name="q50" value="wrong" /> waited</label>
+      </div>
+
+      <div class="question">
+        <p>51. The more you practice, ___ you get.</p>
+        <label><input type="radio" name="q51" value="A" /> better</label>
+        <label><input type="radio" name="q51" value="wrong" /> best</label>
+        <label><input type="radio" name="q51" value="wrong" /> good</label>
+        <label><input type="radio" name="q51" value="wrong" /> well</label>
+      </div>
+
+      <div class="question">
+        <p>52. I wish I ___ more time to relax.</p>
+        <label><input type="radio" name="q52" value="D" /> had</label>
+        <label><input type="radio" name="q52" value="wrong" /> have</label>
+        <label><input type="radio" name="q52" value="wrong" /> will have</label>
+        <label><input type="radio" name="q52" value="wrong" /> having</label>
+      </div>
+
+      <div class="question">
+        <p>53. He accused me ___ stealing his pen.</p>
+        <label><input type="radio" name="q53" value="B" /> of</label>
+        <label><input type="radio" name="q53" value="wrong" /> for</label>
+        <label><input type="radio" name="q53" value="wrong" /> about</label>
+        <label><input type="radio" name="q53" value="wrong" /> to</label>
+      </div>
+
+      <div class="question">
+        <p>54. I’m not used ___ so much noise.</p>
+        <label><input type="radio" name="q54" value="A" /> to</label>
+        <label><input type="radio" name="q54" value="wrong" /> with</label>
+        <label><input type="radio" name="q54" value="wrong" /> of</label>
+        <label><input type="radio" name="q54" value="wrong" /> at</label>
+      </div>
+
+      <div class="question">
+        <p>55. She insisted that he ___ the meeting.</p>
+        <label><input type="radio" name="q55" value="C" /> attend</label>
+        <label><input type="radio" name="q55" value="wrong" /> attends</label>
+        <label><input type="radio" name="q55" value="wrong" /> attended</label>
+        <label><input type="radio" name="q55" value="wrong" /> attending</label>
+      </div>
+
+      <div class="question">
+        <p>56. He would have helped if he ___ asked.</p>
+        <label><input type="radio" name="q56" value="A" /> had been</label>
+        <label><input type="radio" name="q56" value="wrong" /> was</label>
+        <label><input type="radio" name="q56" value="wrong" /> has been</label>
+        <label><input type="radio" name="q56" value="wrong" /> would be</label>
+      </div>
+
+      <div class="question">
+        <p>57. I’m looking forward to ___ my vacation next month.</p>
+        <label><input type="radio" name="q57" value="D" /> taking</label>
+        <label><input type="radio" name="q57" value="wrong" /> take</label>
+        <label><input type="radio" name="q57" value="wrong" /> took</label>
+        <label><input type="radio" name="q57" value="wrong" /> taken</label>
+      </div>
+
+      <div class="question">
+        <p>58. It’s no use ___ about it.</p>
+        <label><input type="radio" name="q58" value="A" /> worrying</label>
+        <label><input type="radio" name="q58" value="wrong" /> to worry</label>
+        <label><input type="radio" name="q58" value="wrong" /> worried</label>
+        <label><input type="radio" name="q58" value="wrong" /> worry</label>
+      </div>
+
+      <div class="question">
+        <p>59. He rarely ___ late for work.</p>
+        <label><input type="radio" name="q59" value="B" /> is</label>
+        <label><input type="radio" name="q59" value="wrong" /> are</label>
+        <label><input type="radio" name="q59" value="wrong" /> was</label>
+        <label><input type="radio" name="q59" value="wrong" /> were</label>
+      </div>
+
+      <div class="question">
+        <p>60. We must ___ the environment.</p>
+        <label><input type="radio" name="q60" value="C" /> protect</label>
+        <label><input type="radio" name="q60" value="wrong" /> protects</label>
+        <label><input type="radio" name="q60" value="wrong" /> protected</label>
+        <label><input type="radio" name="q60" value="wrong" /> protecting</label>
+      </div>Here are the correct answers for questions 27 to 60 of your English level test:
+
+27. would take  
+28. busy  
+29. finished  
+30. ever  
+31. had  
+32. hearing  
+33. significantly  
+34. to  
+35. for  
+36. is  
+37. leaving  
+38. receive  
+39. since  
+40. rains  
+41. had  
+42. had  
+43. be  
+44. did  
+45. came  
+46. to  
+47. being  
+48. knows  
+49. broke  
+50. waiting  
+51. better  
+52. had  
+53. of  
+54. to  
+55. attend  
+56. had been  
+57. taking  
+58. worrying  
+59. is  
+60. protect  
